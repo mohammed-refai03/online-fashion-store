@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly | Luxury Online Fashion & Clothing Boutique</title>
+  <meta name="description" content="Step into Style with Stackly - Salem's premier online fashion & luxury clothing boutique. Discover curated dresses, bespoke menswear, couture accessories, and timeless elegance.">
+  
+  <!-- FontAwesome 6 (Strict Rule: FontAwesome ONLY, no emojis, no svg) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. Top Utility Notification Bar
+       ========================================================================== -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:9876543210"><i class="fa-solid fa-phone"></i> (+91) 9876543210</a>
+        <a href="mailto:info@stackly.com"><i class="fa-solid fa-envelope"></i> info@stackly.com</a>
+        <span><i class="fa-solid fa-location-dot"></i> Salem, Tamil Nadu</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fa-solid fa-tag"></i> Sign up and GET 20% OFF for your first order. Use code: <strong>STACKLY20</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Header & Navigation (with 404 Navigation for Unused Links)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Stackly Home">
+          <img src="images/logo.webp" alt="Stackly Boutique Logo" class="brand-logo-img">
+        </a>
+
+        <!-- Desktop Navlinks (Unused links route to 404.html) -->
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="404.html" class="nav-link">About</a></li>
+          <li><a href="404.html" class="nav-link">Services</a></li>
+          <li><a href="#bentoSection" class="nav-link">Categories</a></li>
+          <li><a href="404.html" class="nav-link">Blog</a></li>
+          <li><a href="404.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Action Controls -->
+        <div class="nav-actions">
+          <button type="button" class="nav-icon-btn" id="navWishlistBtn" onclick="CartService.openWishlistDrawer()" title="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-counter" id="wishlistBadge">0</span>
+          </button>
+
+          <button type="button" class="nav-icon-btn" id="navCartBtn" onclick="CartService.openCartDrawer()" title="Shopping Bag">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge-counter" id="cartBadge">0</span>
+          </button>
+
+          <!-- Login Button in Navbar -->
+          <button type="button" href class="nav-btn-login" id="loginNavBtn">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <span>Login</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="mobile-toggle-btn" id="mobileMenuToggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       2. Hero Section with Fashion Banner (Auto & Manual Slider)
+       ========================================================================== -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-slider-wrapper">
+      
+      <!-- Slide 1 -->
+      <div class="hero-slide active" style="background-image: url('images/hero/hero-1.webp');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content" data-aos="fade-right">
+            <span class="hero-badge"><i class="fa-solid fa-sparkles"></i> 30% OFF Summer Super Sale</span>
+            <h1 class="hero-title">Step into Style: Your Ultimate Fashion Destination</h1>
+            <p class="hero-desc">Discover our hand-tailored boutique collection celebrating timeless silhouettes, sustainable fabrics, and luxurious comfort designed to elevate every occasion.</p>
+            <div class="hero-btn-group">
+              <a href="#newArrivalsSection" class="btn btn-accent btn-pill">
+                Shop Collection <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="404.html" class="btn btn-outline btn-pill" style="color: #FFF; border-color: rgba(255,255,255,0.6);">
+                Explore Story <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="hero-slide" style="background-image: url('images/hero/hero-2.webp');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-crown"></i> Haute Couture Autumn 2026</span>
+            <h2 class="hero-title">Crafted with Care: Fine Materials, Thoughtful Design</h2>
+            <p class="hero-desc">Curated trench coats, cashmere knits, and handcrafted designer leather goods. Minimalist luxury engineered for the discerning modern wardrobe.</p>
+            <div class="hero-btn-group">
+              <a href="#trendingSection" class="btn btn-accent btn-pill">
+                Discover Lookbook <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="404.html" class="btn btn-outline btn-pill" style="color: #FFF; border-color: rgba(255,255,255,0.6);">
+                Stylist Consult <i class="fa-solid fa-scissors"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="hero-slide" style="background-image: url('images/hero/hero-3.webp');">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-bolt"></i> Salem Exclusive Boutique</span>
+            <h2 class="hero-title">Urban Chic & Evening Elegance</h2>
+            <p class="hero-desc">From runway inspired evening gowns to crisp formal tailoring. Experience personal boutique luxury delivered straight to your doorstep.</p>
+            <div class="hero-btn-group">
+              <a href="#bestSellersSection" class="btn btn-accent btn-pill">
+                Shop Best Sellers <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Manual Slider Controls -->
+    <button class="slider-control-btn slider-prev" id="heroPrevBtn" aria-label="Previous Slide">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="slider-control-btn slider-next" id="heroNextBtn" aria-label="Next Slide">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+    <!-- Slider Pagination Dots -->
+    <div class="slider-dots" id="heroSliderDots"></div>
+  </section>
+
+  <!-- ==========================================================================
+       Value Proposition Bar (Feature Badges)
+       ========================================================================== -->
+  <section class="features-bar">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div class="feature-info">
+            <h4>Free Express Shipping</h4>
+            <p>Complimentary shipping for all orders above $150</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <div class="feature-info">
+            <h4>Flexible Payment</h4>
+            <p>Multiple secure payment options & easy returns</p>
+          </div>
+        </div>
+
+        <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div class="feature-info">
+            <h4>24/7 Boutique Support</h4>
+            <p>Personal stylist assistance online every day</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. UNIQUE & ELEGANT BENTO GRID (FEATURED CATEGORIES)
+       Transformed with Asymmetrical Balance & Exceptional Hover Effects
+       ========================================================================== -->
+  <section class="bento-section" id="bentoSection">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-cubes"></i> Haute Architecture</span>
+        <h2 class="section-title">Curated Fashion Bento Collections</h2>
+        <p class="section-subtitle">Immerse yourself in our signature boutique departments. Handcrafted garments, sharp menswear tailoring, and luxury accents designed for effortless modern elegance.</p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <!-- BENTO CARD 1: For Women's (Feature Hero Cell - 7 Cols) -->
+        <a href="404.html" class="bento-card bento-card-women" data-aos="fade-up" data-aos-delay="100">
+          <!-- Background Image matching uploaded reference (Boutique Couture Dress) -->
+          <img src="images/categories/cat-women.webp" 
+               alt="For Women's Luxury Collection" 
+               class="bento-bg-image">
+          <div class="bento-overlay"></div>
+
+          <!-- Top Row: Glassmorphism Item Badge & Icon -->
+          <div class="bento-top-row">
+            <span class="bento-item-badge">
+              <i class="fa-solid fa-sparkles"></i> 2500+ Items
+            </span>
+            <div class="bento-icon-circle">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <!-- Bottom Content: Typography, Subcategories & Interactive Button -->
+          <div class="bento-bottom-content">
+            <span class="bento-pre-title">Signature Atelier Collection</span>
+            <h3 class="bento-card-title">For Women's</h3>
+            <p class="bento-desc">Dresses, Silk Blouses, Knits & Skirts crafted from pure mulberry silks and organic breathable textiles.</p>
+            
+            <div class="bento-tag-pills">
+              <span class="bento-tag">Dresses</span>
+              <span class="bento-tag">Silk Blouses</span>
+              <span class="bento-tag">Knits & Skirts</span>
+              <span class="bento-tag">Evening Gowns</span>
+            </div>
+
+            <div>
+              <span class="bento-cta-btn">
+                Explore Category <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- BENTO CARD 2: For Men's (Sartorial Menswear - 5 Cols) -->
+        <a href="404.html" class="bento-card bento-card-men" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/categories/cat-men.webp" 
+               alt="For Men's Tailoring" 
+               class="bento-bg-image">
+          <div class="bento-overlay"></div>
+
+          <div class="bento-top-row">
+            <span class="bento-item-badge">
+              <i class="fa-solid fa-crown"></i> 1800+ Items
+            </span>
+            <div class="bento-icon-circle">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <div class="bento-bottom-content">
+            <span class="bento-pre-title">Sartorial Precision & Linen</span>
+            <h3 class="bento-card-title">For Men's</h3>
+            <p class="bento-desc">Tailored Suits, Linen Shirts & Jackets with bespoke Italian cuts and breathable tropical weaves.</p>
+            
+            <div class="bento-tag-pills">
+              <span class="bento-tag">Tailored Suits</span>
+              <span class="bento-tag">Linen Shirts</span>
+              <span class="bento-tag">Jackets</span>
+            </div>
+
+            <div>
+              <span class="bento-cta-btn">
+                Explore Category <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- BENTO CARD 3: Accessories (6 Cols) -->
+        <a href="404.html" class="bento-card bento-card-accessories" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/categories/cat-accessories.webp" 
+               alt="Designer Accessories and Leather Handbag" 
+               class="bento-bg-image">
+          <div class="bento-overlay"></div>
+
+          <div class="bento-top-row">
+            <span class="bento-item-badge">
+              <i class="fa-solid fa-gem"></i> 900+ Items
+            </span>
+            <div class="bento-icon-circle">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <div class="bento-bottom-content">
+            <span class="bento-pre-title">Handcrafted Leathercraft</span>
+            <h3 class="bento-card-title">Accessories</h3>
+            <p class="bento-desc">Leather Bags, Fine Silk Scarves & Belts featuring vegetable-tanned leathers and gold-tone hardware.</p>
+            
+            <div class="bento-tag-pills">
+              <span class="bento-tag">Leather Bags</span>
+              <span class="bento-tag">Fine Silk Scarves</span>
+              <span class="bento-tag">Belts</span>
+            </div>
+
+            <div>
+              <span class="bento-cta-btn">
+                Explore Category <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+        <!-- BENTO CARD 4: Eyewear & Jewelry (6 Cols) -->
+        <a href="404.html" class="bento-card bento-card-eyewear" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/categories/cat-eyewear.webp" 
+               alt="Designer Shades Eyewear and Jewelry" 
+               class="bento-bg-image">
+          <div class="bento-overlay"></div>
+
+          <div class="bento-top-row">
+            <span class="bento-item-badge">
+              <i class="fa-solid fa-glasses"></i> 650+ Items
+            </span>
+            <div class="bento-icon-circle">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <div class="bento-bottom-content">
+            <span class="bento-pre-title">Curated Accents & Timepieces</span>
+            <h3 class="bento-card-title">Eyewear & Jewelry</h3>
+            <p class="bento-desc">Designer Shades, Timepieces & Gemstones with UV400 lenses and handcrafted artisan jewelry.</p>
+            
+            <div class="bento-tag-pills">
+              <span class="bento-tag">Designer Shades</span>
+              <span class="bento-tag">Timepieces</span>
+              <span class="bento-tag">Gemstones</span>
+            </div>
+
+            <div>
+              <span class="bento-cta-btn">
+                Explore Category <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. New Arrivals (API Dynamic Products)
+       ========================================================================== -->
+  <section class="section-padding" style="background-color: #FFFFFF;" id="newArrivalsSection">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Just Landed</span>
+          <h2 class="section-title" style="margin-bottom: 0;">New Arrivals</h2>
+        </div>
+        <a href="404.html" class="btn btn-outline btn-pill btn-sm">
+          View All Products <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <!-- Dynamic API Grid: Loaded via js/app.js -->
+      <div class="product-grid" id="newArrivalsGrid">
+        <!-- Skeletons rendered initially -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. Trending Products (API Dynamic with Filter Tabs)
+       ========================================================================== -->
+  <section class="section-padding" id="trendingSection">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-fire"></i> Most Coveted</span>
+        <h2 class="section-title">Trending Styles</h2>
+        <p class="section-subtitle">Experience the pieces our boutique patrons are loving right now. Dynamic styling for effortless everyday glamour.</p>
+      </div>
+
+      <!-- Trending Controls: Search, Category Filter & Sorting -->
+      <div class="trending-controls-bar" data-aos="fade-up">
+        
+        <!-- Search Input with Search Icon & Clear Button -->
+        <div class="trending-search-wrap">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input 
+            type="text" 
+            id="trendingSearchInput" 
+            class="trending-search-input" 
+            placeholder="Search boutique styles by name, fabric, or designer..." 
+            autocomplete="off"
+            aria-label="Search trending styles"
+          >
+          <button type="button" id="trendingSearchClear" class="trending-search-clear" aria-label="Clear search" style="display: none;">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Filter Tabs & Sort Controls Row -->
+        <div class="trending-filter-sort-row">
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" id="trendingTabs">
+            <button type="button" class="filter-pill active" data-filter="all">All Styles</button>
+            <button type="button" class="filter-pill" data-filter="women">Women's Couture</button>
+            <button type="button" class="filter-pill" data-filter="men">Men's Tailoring</button>
+            <button type="button" class="filter-pill" data-filter="accessories">Accessories</button>
+          </div>
+
+          <!-- Sort Dropdown & Count Badge -->
+          <div class="trending-sort-wrap">
+            <label for="trendingSortSelect" class="sort-label">
+              <i class="fa-solid fa-arrow-down-short-wide"></i> Sort:
+            </label>
+            <div class="sort-select-box">
+              <select id="trendingSortSelect" class="trending-sort-select" aria-label="Sort styles">
+                <option value="featured">Featured Styles</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Top Patron Rating</option>
+                <option value="name">Name: A to Z</option>
+              </select>
+              <i class="fa-solid fa-chevron-down select-chevron"></i>
+            </div>
+            <span class="trending-count-badge" id="trendingCountBadge">8 Styles</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Dynamic API Grid -->
+      <div class="product-grid" id="trendingGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. Best Sellers (API Dynamic Top Rated)
+       ========================================================================== -->
+  <section class="section-padding" style="background-color: #FFFFFF;" id="bestSellersSection">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Customer Favorites</span>
+        <h2 class="section-title">Best Selling Masterpieces</h2>
+        <p class="section-subtitle">Top rated garments with exceptional customer satisfaction and five-star reviews.</p>
+      </div>
+
+      <!-- Dynamic API Grid -->
+      <div class="product-grid" id="bestSellersGrid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. Special Offers (Redesigned Haute Boutique Privileges & Vouchers)
+       ========================================================================== -->
+  <section class="section-padding offers-section" id="specialOffersSection">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-gem"></i> Curated Atelier Privileges</span>
+        <h2 class="section-title">Exclusive Boutique Offers</h2>
+        <p class="section-subtitle">Take advantage of seasonal privileges, promotional vouchers, and flash discounts.</p>
+      </div>
+
+      <div class="offers-grid">
+        <!-- Offer 1: Flash Deal Card (Haute Couture Dark Mode Hero Card with Live Countdown) -->
+        <div class="luxury-offer-card offer-card-flash" data-aos="fade-up" data-aos-delay="100">
+          <div class="offer-card-top">
+            <div class="offer-status-badge">
+              <span class="pulse-indicator"></span>
+              <i class="fa-solid fa-bolt-lightning"></i> FLASH VAULT
+            </div>
+            <span class="offer-badge-gold">LIMITED ATELIER</span>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="offer-discount-display">
+              <span class="discount-num">40</span>
+              <div class="discount-suffix">
+                <span class="discount-pct">%</span>
+                <span class="discount-off">OFF</span>
+              </div>
+            </div>
+            <h3 class="offer-card-heading">Evening Wear & Silk Gowns</h3>
+            <p class="offer-card-desc">Elevate your evening wardrobe with pure mulberry silk dresses and hand-beaded couture gowns before the private vault closes.</p>
+            
+            <!-- Refined Glassmorphic Countdown -->
+            <div class="luxury-countdown">
+              <div class="countdown-unit">
+                <span class="unit-val" id="offerDays">03</span>
+                <span class="unit-label">DAYS</span>
+              </div>
+              <span class="countdown-colon">:</span>
+              <div class="countdown-unit">
+                <span class="unit-val" id="offerHours">14</span>
+                <span class="unit-label">HRS</span>
+              </div>
+              <span class="countdown-colon">:</span>
+              <div class="countdown-unit">
+                <span class="unit-val" id="offerMins">28</span>
+                <span class="unit-label">MIN</span>
+              </div>
+              <span class="countdown-colon">:</span>
+              <div class="countdown-unit">
+                <span class="unit-val" id="offerSecs">45</span>
+                <span class="unit-label">SEC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card-footer">
+            <a href="404.html" class="btn btn-luxury-gold btn-pill" style="width: 100%;">
+              <span>Shop Flash Sale</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Offer 2: Bundle Privileges (Perforated Haute Ticket Design) -->
+        <div class="luxury-offer-card offer-card-ticket" data-aos="fade-up" data-aos-delay="200">
+          <div class="ticket-notch notch-left"></div>
+          <div class="ticket-notch notch-right"></div>
+          
+          <div class="offer-card-top">
+            <div class="offer-status-badge badge-terracotta">
+              <i class="fa-solid fa-gift"></i> BUNDLE PRIVILEGE
+            </div>
+            <span class="ticket-seal-badge"><i class="fa-solid fa-certificate"></i> AUTHENTIC</span>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="offer-discount-display text-terracotta">
+              <span class="discount-num">BOGO</span>
+              <div class="discount-suffix">
+                <span class="discount-pct" style="font-size: 1.1rem; line-height: 1.2;">50%</span>
+                <span class="discount-off">OFF 2ND</span>
+              </div>
+            </div>
+            <h3 class="offer-card-heading">Buy 1 Get 1 at 50% Off</h3>
+            <p class="offer-card-desc">Purchase any handcrafted Italian leather bag or designer sunglasses and receive the second companion accessory at half price.</p>
+            
+            <div class="ticket-perforated-strip">
+              <div class="ticket-barcode-pattern">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="ticket-voucher-info">
+                <i class="fa-solid fa-ticket"></i> Auto-applied at checkout
+              </div>
+            </div>
+          </div>
+
+          <div class="offer-card-footer">
+            <a href="404.html" class="btn btn-primary btn-pill" style="width: 100%;">
+              <span>Explore Handbags</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Offer 3: First Patron Pass (Golden VIP Tier Voucher) -->
+        <div class="luxury-offer-card offer-card-gold" data-aos="fade-up" data-aos-delay="300">
+          <div class="offer-card-top">
+            <div class="offer-status-badge badge-gold">
+              <i class="fa-solid fa-crown"></i> VIP WELCOME PASS
+            </div>
+            <span class="vip-tier-badge">NEW PATRON</span>
+          </div>
+
+          <div class="offer-card-body">
+            <div class="offer-discount-display text-gold">
+              <span class="discount-num">20</span>
+              <div class="discount-suffix">
+                <span class="discount-pct">%</span>
+                <span class="discount-off">FLAT</span>
+              </div>
+            </div>
+            <h3 class="offer-card-heading">Flat 20% Off Your Order</h3>
+            <p class="offer-card-desc">Join the Stackly inner circle and enjoy an instant 20% discount on your premier purchase across all apparel and boutique accessories.</p>
+            
+            <div class="vip-coupon-capsule">
+              <div class="vip-coupon-code">
+                <i class="fa-solid fa-key"></i>
+                <span>STACKLY20</span>
+              </div>
+              <span class="vip-coupon-hint">Ready to Apply</span>
+            </div>
+          </div>
+
+          <div class="offer-card-footer">
+            <button type="button" class="btn btn-gold-outline btn-pill" style="width: 100%;" onclick="CartService.applyCoupon('STACKLY20')">
+              <span>Apply Code Now</span> <i class="fa-solid fa-check"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. Customer Testimonials (Unique Design of Slider - Auto & Manual)
+       ========================================================================== -->
+  <section class="section-padding" style="background-color: #FFFFFF;" id="testimonialsSection">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag"><i class="fa-solid fa-quote-left"></i> Verified Patron Voices</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Authentic reviews from fashion connoisseurs who experience Stackly boutique elegance.</p>
+      </div>
+
+      <div class="testimonial-slider-wrapper" data-aos="fade-up">
+        <!-- Main Carousel Container -->
+        <div class="testimonial-carousel" id="testimonialCarousel">
+          <div class="testimonial-slides-track" id="testimonialTrack">
+            
+            <!-- Slide 1: Ananya Sundaram -->
+            <div class="testimonial-slide-item">
+              <div class="testi-decor-quote">
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div>
+                <div class="testi-badge-row">
+                  <span class="testi-verified-pill">
+                    <i class="fa-solid fa-circle-check"></i> Verified Haute Client
+                  </span>
+                  <span style="font-size: 0.8rem; color: var(--color-text-light);">
+                    <i class="fa-solid fa-calendar-check"></i> Recent Purchase
+                  </span>
+                </div>
+                <blockquote class="testi-quote-text">
+                  “The craftsmanship of the embroidered silk trench coat is beyond extraordinary. The stitching, fabric drape, and attention to detail rivals luxury European houses right here in Tamil Nadu!”
+                </blockquote>
+              </div>
+              <div class="testi-author-bar">
+                <div class="testi-profile">
+                  <div class="testi-avatar-wrap">
+                    <img src="images/testimonials/patron-1.webp" alt="Ananya Sundaram" class="testi-avatar-img">
+                    <div class="testi-verified-icon"><i class="fa-solid fa-circle-check"></i></div>
+                  </div>
+                  <div class="testi-info">
+                    <h4>Ananya Sundaram</h4>
+                    <p>Chennai, Fashion Editor</p>
+                  </div>
+                </div>
+                <div class="testi-stars-wrap" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Vikramaditya Rao -->
+            <div class="testimonial-slide-item">
+              <div class="testi-decor-quote">
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div>
+                <div class="testi-badge-row">
+                  <span class="testi-verified-pill">
+                    <i class="fa-solid fa-circle-check"></i> Verified Haute Client
+                  </span>
+                  <span style="font-size: 0.8rem; color: var(--color-text-light);">
+                    <i class="fa-solid fa-calendar-check"></i> Salem Atelier Client
+                  </span>
+                </div>
+                <blockquote class="testi-quote-text">
+                  “Shopping at Stackly online was as personalized as visiting an intimate high-fashion atelier. The size recommendation was spot on and my dress arrived within 48 hours in luxury packaging.”
+                </blockquote>
+              </div>
+              <div class="testi-author-bar">
+                <div class="testi-profile">
+                  <div class="testi-avatar-wrap">
+                    <img src="images/testimonials/patron-2.webp" alt="Vikramaditya Rao" class="testi-avatar-img">
+                    <div class="testi-verified-icon"><i class="fa-solid fa-circle-check"></i></div>
+                  </div>
+                  <div class="testi-info">
+                    <h4>Vikramaditya Rao</h4>
+                    <p>Salem, Creative Director</p>
+                  </div>
+                </div>
+                <div class="testi-stars-wrap" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Pooja Nandakumar -->
+            <div class="testimonial-slide-item">
+              <div class="testi-decor-quote">
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div>
+                <div class="testi-badge-row">
+                  <span class="testi-verified-pill">
+                    <i class="fa-solid fa-circle-check"></i> Verified Haute Client
+                  </span>
+                  <span style="font-size: 0.8rem; color: var(--color-text-light);">
+                    <i class="fa-solid fa-calendar-check"></i> Capsule Wardrobe
+                  </span>
+                </div>
+                <blockquote class="testi-quote-text">
+                  “I appreciate that their bespoke tailoring support is responsive and knowledgeable. Stackly has completely transformed how I curate my daily and festive capsule wardrobe.”
+                </blockquote>
+              </div>
+              <div class="testi-author-bar">
+                <div class="testi-profile">
+                  <div class="testi-avatar-wrap">
+                    <img src="images/testimonials/patron-3.webp" alt="Pooja Nandakumar" class="testi-avatar-img">
+                    <div class="testi-verified-icon"><i class="fa-solid fa-circle-check"></i></div>
+                  </div>
+                  <div class="testi-info">
+                    <h4>Pooja Nandakumar</h4>
+                    <p>Bengaluru, Architect</p>
+                  </div>
+                </div>
+                <div class="testi-stars-wrap" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Meera Krishnan -->
+            <div class="testimonial-slide-item">
+              <div class="testi-decor-quote">
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div>
+                <div class="testi-badge-row">
+                  <span class="testi-verified-pill">
+                    <i class="fa-solid fa-circle-check"></i> Verified Haute Client
+                  </span>
+                  <span style="font-size: 0.8rem; color: var(--color-text-light);">
+                    <i class="fa-solid fa-calendar-check"></i> Evening Couture
+                  </span>
+                </div>
+                <blockquote class="testi-quote-text">
+                  “The hand-beaded evening gowns and pure mulberry silk blouses have an unmatched fit. Stackly is truly elevating South Indian boutique couture to international luxury standards!”
+                </blockquote>
+              </div>
+              <div class="testi-author-bar">
+                <div class="testi-profile">
+                  <div class="testi-avatar-wrap">
+                    <img src="images/testimonials/patron-4.webp" alt="Meera Krishnan" class="testi-avatar-img">
+                    <div class="testi-verified-icon"><i class="fa-solid fa-circle-check"></i></div>
+                  </div>
+                  <div class="testi-info">
+                    <h4>Meera Krishnan</h4>
+                    <p>Coimbatore, Senior Fashion Stylist</p>
+                  </div>
+                </div>
+                <div class="testi-stars-wrap" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Auto & Manual Controls Bar -->
+        <div class="testimonial-controls-bar">
+          <!-- Manual Prev/Next Arrow Controls -->
+          <div class="testi-nav-arrows">
+            <button type="button" class="testi-arrow-btn" id="testiPrevBtn" aria-label="Previous Review">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button type="button" class="testi-arrow-btn" id="testiNextBtn" aria-label="Next Review">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Pagination Dots (Interactive Click) -->
+          <div class="testi-pagination-dots" id="testiDots">
+            <!-- Dynamically generated and synced -->
+          </div>
+
+          <!-- Live Slide Counter (e.g. 01 / 04) -->
+          <div class="testi-counter-label" id="testiCounter">
+            01 / 04
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. Newsletter Subscription
+       ========================================================================== -->
+  <section class="newsletter-section" id="newsletterSection">
+    <div class="container">
+      <div class="newsletter-box" data-aos="fade-up">
+        <span class="section-tag" style="background: rgba(212, 163, 115, 0.2); color: var(--color-gold);"><i class="fa-solid fa-envelope-open-text"></i> Stackly Haute Club</span>
+        <h2>Subscribe for Private Previews & 20% Off</h2>
+        <p>Receive curated seasonal lookbooks, early access to designer sample sales, and bespoke fashion advice.</p>
+        
+        <form class="newsletter-form" id="homeNewsletterForm" novalidate>
+          <div class="newsletter-input-wrap">
+            <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="Enter your email address..." required>
+          </div>
+          <button type="submit" class="btn btn-accent btn-pill">
+            Subscribe <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. Footer (Strict 4-Column Layout, Unused Links Route to 404.html)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand Info & Social Media Buttons -->
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <img src="images/logo.webp" alt="Stackly Fashion Boutique" class="brand-logo-img">
+          </div>
+          <p>Stackly is Salem's premier online fashion and luxury boutique, curating contemporary couture, sustainable everyday elegance, and bespoke style statements.</p>
+          <div class="footer-social-links">
+            <a href="404.html" class="social-icon-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-icon-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-icon-btn" title="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="404.html" class="social-icon-btn" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-icon-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links (Navlinks with 404 Navigation for Unused) -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-angle-right"></i> About</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+            <li><a href="#bentoSection"><i class="fa-solid fa-angle-right"></i> Categories</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Policy Links (Route to 404.html) -->
+        <div class="footer-col">
+          <h4>Our Policies</h4>
+          <ul class="footer-nav-list">
+            <li><a href="404.html"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-rotate-left"></i> Return & Refund Policy</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-truck"></i> Shipping Information</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-triangle-exclamation"></i> 404 Error Showcase</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact Details & Google Map -->
+        <div class="footer-col">
+          <h4>Boutique Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@stackly.com">info@stackly.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:9876543210">+91 9876543210</a>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-clock"></i>
+              <span>Monday – Saturday: 10:00 AM – 9:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Embedded Map & Location Link -->
+          <div class="footer-map-embed">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.189574218843!2d78.1714049!3d11.6829566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="Stackly Boutique Salem Map">
+            </iframe>
+          </div>
+          <a href="https://www.google.com/maps/place/Stackly/@11.6829566,78.1739798,17z/data=!3m1!4b1!4m6!3m5!1s0x3babefef7fd970bb:0xe11aef1a71994f9!8m2!3d11.6829566!4d78.1739798!16s%2Fg%2F11l660s35r" 
+             target="_blank" 
+             rel="noopener" 
+             style="font-size: 0.8rem; color: var(--color-gold); display: inline-flex; align-items: center; gap: 6px; margin-top: 6px;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Salem Store on Google Maps
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Online Fashion Boutique. All rights reserved.</p>
+        <p>Built with Pure HTML5, CSS3, ES6+ JavaScript & DummyJSON API</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Shopping Cart Drawer
+       ========================================================================== -->
+  <div class="modal-overlay" id="cartOverlay" onclick="CartService.closeAllDrawers()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-bag-shopping"></i> Your Shopping Bag</h3>
+      <button class="modal-close-btn" id="closeCartBtn" onclick="CartService.closeCartDrawer()" style="position: static;" aria-label="Close Cart">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerItems">
+      <!-- Items dynamically populated by CartService -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <!-- Coupon Application -->
+      <div id="appliedCouponStatus"></div>
+      <div class="coupon-box">
+        <input type="text" class="coupon-input" id="couponCodeInput" placeholder="Coupon (e.g. STACKLY20)">
+        <button type="button" class="btn btn-primary btn-sm" id="applyCouponBtn">Apply</button>
+      </div>
+
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Discount</span>
+        <span id="cartDiscount" style="color: var(--color-success);">-$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Shipping (Free over $150)</span>
+        <span id="cartShipping">$0.00</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Grand Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+
+      <button type="button" class="btn btn-accent btn-pill" id="checkoutBtn" style="width: 100%; margin-top: 14px;">
+        Proceed to Checkout <i class="fa-solid fa-lock"></i>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Wishlist Drawer (Slide-out dedicated Wishlist Area)
+       ========================================================================== -->
+  <aside class="cart-drawer" id="wishlistDrawer" aria-label="Your Wishlist">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-heart" style="color: var(--color-accent);"></i> Saved Wishlist (<span id="wishlistDrawerCount">0</span>)</h3>
+      <button type="button" class="modal-close-btn" id="closeWishlistBtn" onclick="CartService.closeWishlistDrawer()" style="position: static;" aria-label="Close Wishlist">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="cart-drawer-body" id="wishlistDrawerItems">
+      <!-- Items dynamically populated by CartService.renderWishlistDrawer() -->
+    </div>
+
+    <div class="cart-drawer-footer" id="wishlistDrawerFooter">
+      <button type="button" class="btn btn-accent btn-pill" id="moveAllWishlistToBagBtn" style="width: 100%;">
+        <i class="fa-solid fa-bag-shopping"></i> Move All to Shopping Bag
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Quick View Modal Popup
+       ========================================================================== -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn" id="closeQuickModalBtn" aria-label="Close Quick View">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="quickViewContent">
+        <!-- Injected dynamically by js/app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Authentication Modal (Login / Register with Strict Validations)
+       ========================================================================== -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box" style="max-width: 480px;">
+      <button type="button" class="modal-close-btn" id="closeAuthBtn" aria-label="Close Authentication">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div class="brand-emblem" style="margin: 0 auto 12px;">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+        <h3 style="font-size: 1.6rem; color: var(--color-primary);">Welcome to Stackly</h3>
+        <p style="font-size: 0.88rem; color: var(--color-text-muted);">Access your boutique orders, wishlist, and exclusive privileges.</p>
+      </div>
+
+      <!-- Auth Switch Tabs -->
+      <div class="filter-tabs" style="margin-bottom: 20px;">
+        <button type="button" class="filter-pill active" id="tabAuthLogin">Sign In</button>
+        <button type="button" class="filter-pill" id="tabAuthRegister">Create Account</button>
+      </div>
+
+      <!-- Login Form Container -->
+      <div id="boxAuthLogin">
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" class="form-control" id="loginEmail" placeholder="e.g. client@stackly.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In to Account
+          </button>
+        </form>
+      </div>
+
+      <!-- Register Form Container -->
+      <div id="boxAuthRegister" style="display: none;">
+        <form id="registerForm" novalidate>
+          <!-- Strict Alphabet-only Name Field -->
+          <div class="form-group">
+            <label class="form-label">Full Name <small style="color: var(--color-accent);">(Alphabets Only)</small></label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" class="form-control" id="registerName" data-type="name" placeholder="e.g. Priyadarshini Ram" required>
+            </div>
+          </div>
+
+          <!-- Strict Number-only Phone Field -->
+          <div class="form-group">
+            <label class="form-label">Phone Number <small style="color: var(--color-accent);">(10 Digits Only)</small></label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-phone"></i>
+              <input type="tel" class="form-control" id="registerPhone" data-type="phone" placeholder="e.g. 9876543210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" class="form-control" id="registerEmail" placeholder="e.g. client@stackly.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Create Password</label>
+            <div class="input-with-icon">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" class="form-control" id="registerPassword" placeholder="At least 6 characters" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+            <i class="fa-solid fa-user-plus"></i> Complete Registration
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Order Confirmation Modal Popup
+       ========================================================================== -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-box" style="max-width: 520px;">
+      <button type="button" class="modal-close-btn" id="closeOrderModalBtn" aria-label="Close Order Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="orderModalBody">
+        <!-- Rendered by CartService.checkout() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- External Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <!-- Application Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

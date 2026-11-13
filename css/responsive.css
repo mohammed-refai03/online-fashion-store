@@ -1,0 +1,622 @@
+/* ==========================================================================
+   STACKLY - RESPONSIVE STYLESHEET
+   Breakpoints: 320px, 375px, 420px, 768px, 1024px, 1440px
+   ========================================================================== */
+
+/* 1440px High-Resolution Desktop Enhancements */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+
+  .hero-title {
+    font-size: 3.8rem;
+  }
+
+  .section-title {
+    font-size: 2.7rem;
+  }
+
+  .bento-card-women, .bento-card-men {
+    height: 560px;
+  }
+
+  .bento-card-accessories, .bento-card-eyewear {
+    height: 420px;
+  }
+
+  .product-thumb-wrap {
+    height: 350px;
+  }
+}
+
+/* 1024px Desktop & Landscape Tablet */
+@media (max-width: 1199px) {
+  .bento-card-women, .bento-card-men {
+    height: 480px;
+  }
+
+  .bento-card-accessories, .bento-card-eyewear {
+    height: 370px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .nav-menu {
+    gap: 20px;
+  }
+}
+
+/* 768px Tablet Portrait */
+@media (max-width: 991px) {
+  .mobile-toggle-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    width: 100vw;
+    height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 28px 40px;
+    gap: 16px;
+    box-shadow: var(--shadow-lg);
+    transition: left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1000;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.12rem;
+    font-weight: 500;
+    width: 100%;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--color-border);
+    display: block;
+    color: var(--color-text-main);
+  }
+
+  /* Bento Grid Stack on Tablet */
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bento-card-women, 
+  .bento-card-men, 
+  .bento-card-accessories, 
+  .bento-card-eyewear {
+    grid-column: span 1;
+    height: 440px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .luxury-offer-card {
+    min-height: auto;
+  }
+
+  .ticket-notch {
+    display: none;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonial-slide-item {
+    padding: 40px 32px;
+  }
+
+  .testi-quote-text {
+    font-size: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-slide {
+    min-height: 500px;
+  }
+
+  .hero-slider-wrapper {
+    min-height: 500px;
+  }
+
+  .slider-prev {
+    left: 12px;
+  }
+
+  .slider-next {
+    right: 12px;
+  }
+}
+
+/* 768px Tablet down to Mobile */
+@media (max-width: 768px) {
+  .top-bar-left {
+    display: none;
+  }
+
+  .top-bar .container {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .product-thumb-wrap {
+    height: 220px;
+  }
+
+  .product-title {
+    font-size: 0.95rem;
+    height: 2.4rem;
+  }
+
+  .current-price {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto 28px !important;
+    gap: 14px;
+  }
+
+  .newsletter-input-wrap {
+    width: 100% !important;
+    display: block !important;
+    flex: none !important;
+  }
+
+  .newsletter-input {
+    width: 100% !important;
+    height: 52px !important;
+    box-sizing: border-box !important;
+    font-size: 0.95rem;
+    text-align: center;
+    border-radius: var(--radius-pill) !important;
+  }
+
+  .newsletter-form .btn {
+    width: 100% !important;
+    height: 52px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-pill) !important;
+  }
+
+  .newsletter-input-wrap .form-error-msg {
+    position: static;
+    margin-top: 6px;
+    margin-bottom: 8px;
+    white-space: normal;
+  }
+
+  /* Trending Controls on Tablet */
+  .trending-filter-sort-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .trending-sort-wrap {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* 420px Large Mobile */
+@media (max-width: 575px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .bento-card {
+    padding: 24px;
+    height: 390px;
+  }
+
+  .bento-card-title {
+    font-size: 1.85rem;
+  }
+
+  .bento-desc {
+    font-size: 0.88rem;
+  }
+
+  .bento-cta-btn {
+    padding: 8px 18px;
+    font-size: 0.82rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-desc {
+    font-size: 0.92rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .navbar {
+    height: 60px;
+  }
+
+  .nav-menu {
+    top: 60px;
+    width: 100%;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    height: calc(100dvh - 60px);
+    padding: 24px 20px 36px;
+    gap: 14px;
+  }
+
+  .brand-logo-img {
+    height: 32px;
+    max-width: 115px;
+    object-fit: contain;
+  }
+
+  .nav-actions {
+    gap: 6px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .nav-icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .badge-counter {
+    top: -3px;
+    right: -3px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.62rem;
+    border: 1.5px solid #FFFFFF;
+  }
+
+  .nav-btn-login {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-btn-login span {
+    display: none;
+  }
+
+  .mobile-toggle-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .newsletter-box {
+    padding: 0 8px;
+  }
+
+  .newsletter-box h2 {
+    font-size: 1.6rem;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  .newsletter-box p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .newsletter-form {
+    gap: 12px;
+  }
+
+  .newsletter-input {
+    height: 48px !important;
+    font-size: 0.92rem;
+    padding: 0 16px;
+  }
+
+  .newsletter-form .btn {
+    height: 48px !important;
+    font-size: 0.95rem;
+  }
+
+  /* Trending Controls Mobile */
+  .trending-search-input {
+    height: 48px;
+    font-size: 0.9rem;
+    padding: 0 42px 0 44px;
+  }
+
+  .filter-tabs {
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .filter-pill {
+    padding: 7px 16px;
+    font-size: 0.82rem;
+  }
+
+  .trending-sort-wrap {
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trending-sort-select {
+    padding: 8px 32px 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  .trending-count-badge {
+    font-size: 0.78rem;
+    padding: 4px 10px;
+  }
+
+  .slider-control-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
+  .testimonial-slide-item {
+    padding: 30px 20px;
+  }
+
+  .testi-quote-text {
+    font-size: 1.12rem;
+    margin-bottom: 24px;
+  }
+
+  .testi-decor-quote {
+    font-size: 3.5rem;
+    top: 10px;
+    right: 14px;
+  }
+
+  .testi-author-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .testi-arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.9rem;
+  }
+
+  .testi-counter-label {
+    font-size: 0.88rem;
+  }
+}
+
+/* 375px Standard Mobile */
+@media (max-width: 390px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-thumb-wrap {
+    height: 260px;
+  }
+
+  .bento-card {
+    padding: 20px;
+    height: 370px;
+  }
+
+  .bento-card-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .brand-logo-img {
+    height: 28px;
+    max-width: 105px;
+  }
+
+  .nav-actions {
+    gap: 5px;
+  }
+
+  .nav-icon-btn,
+  .nav-btn-login,
+  .mobile-toggle-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .nav-btn-login {
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .badge-counter {
+    top: -3px;
+    right: -3px;
+    width: 15px;
+    height: 15px;
+    font-size: 0.58rem;
+  }
+
+  .newsletter-box h2 {
+    font-size: 1.45rem;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .filter-tabs {
+    gap: 6px;
+  }
+
+  .filter-pill {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+}
+
+/* 320px Compact Mobile */
+@media (max-width: 330px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .bento-card {
+    padding: 16px;
+    height: 350px;
+  }
+
+  .bento-card-title {
+    font-size: 1.45rem;
+  }
+
+  .bento-tag {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .brand-logo-img {
+    height: 25px;
+    max-width: 88px;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .nav-icon-btn,
+  .nav-btn-login,
+  .mobile-toggle-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+  }
+
+  .nav-btn-login {
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .badge-counter {
+    top: -3px;
+    right: -3px;
+    width: 14px;
+    height: 14px;
+    font-size: 0.55rem;
+  }
+
+  .filter-pill {
+    padding: 5px 10px;
+    font-size: 0.74rem;
+  }
+
+  .trending-search-input {
+    height: 44px;
+    font-size: 0.84rem;
+    padding: 0 36px 0 38px;
+  }
+
+  .newsletter-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .hero-btn-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-btn-group .btn {
+    width: 100%;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.84rem;
+  }
+}

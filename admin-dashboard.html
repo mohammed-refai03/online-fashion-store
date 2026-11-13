@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique Analytics & Store Overview | Stackly Admin</title>
+  <meta name="description" content="Read-only operations overview, sales KPIs, inventory levels, and order metrics for Stackly Online Fashion Boutique.">
+
+  <!-- FontAwesome 6 (Strict Rule: FontAwesome ONLY, no emoji, no svg) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* Strict Read-Only Dashboard Styles (Zero Forms) */
+    .admin-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .admin-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .admin-kpi-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .admin-kpi-header h5 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .admin-kpi-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--color-bg-surface);
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+    }
+
+    .admin-kpi-val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+
+    .trend-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .trend-up {
+      color: var(--color-success);
+    }
+
+    /* Progress Stat Bars (CSS-only, Zero Forms) */
+    .progress-bar-wrap {
+      margin-bottom: 18px;
+    }
+
+    .progress-bar-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .progress-track {
+      height: 10px;
+      background: var(--color-bg-surface);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--color-accent);
+      border-radius: var(--radius-pill);
+    }
+
+    .progress-fill.gold {
+      background: var(--color-gold);
+    }
+
+    .progress-fill.primary {
+      background: var(--color-primary);
+    }
+
+    .data-table-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+      margin-bottom: 30px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    .data-table th {
+      padding: 14px 16px;
+      background: var(--color-bg-surface);
+      color: var(--color-primary);
+      font-weight: 700;
+      border-bottom: 2px solid var(--color-border);
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+      color: var(--color-text-main);
+    }
+
+    .stock-badge {
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .stock-in {
+      background: #EAFAF1;
+      color: #27AE60;
+    }
+
+    .stock-low {
+      background: #FEF9E7;
+      color: #F39C12;
+    }
+
+    @media (max-width: 991px) {
+      .admin-metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 575px) {
+      .admin-metrics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:9876543210"><i class="fa-solid fa-phone"></i> (+91) 9876543210</a>
+        <a href="mailto:info@stackly.com"><i class="fa-solid fa-envelope"></i> info@stackly.com</a>
+        <span><i class="fa-solid fa-location-dot"></i> Salem Atelier HQ</span>
+      </div>
+      <div class="top-bar-right">
+        <span class="top-bar-promo"><i class="fa-solid fa-lock"></i> Store Operations Hub (Strictly Read-Only)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-emblem"><i class="fa-solid fa-gem"></i></div>
+          <span class="brand-name">Stackly<span>.</span></span>
+        </a>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="shop.html" class="nav-link">Shop</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard-user.html" class="nav-link">Customer View</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="dashboard-user.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-user"></i> Customer Dashboard</a>
+          <button type="button" class="mobile-toggle-btn" id="mobileMenuToggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div style="background-color: var(--color-bg-surface); padding: 40px 0 32px; border-bottom: 1px solid var(--color-border);">
+    <div class="container">
+      <span class="section-tag"><i class="fa-solid fa-chart-pie"></i> Executive Overview</span>
+      <h1 style="font-size: 2.3rem; margin-bottom: 4px;">Store Performance & Atelier Analytics</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem;">Live operational metrics, sales volume, category distribution, and stock levels (Zero-Forms Interface).</p>
+    </div>
+  </div>
+
+  <!-- Dashboard Main Content (STRICT: ZERO FORMS) -->
+  <main class="section-padding" style="padding-top: 40px;">
+    <div class="container">
+      
+      <!-- Metric KPI Cards -->
+      <div class="admin-metrics-grid">
+        <div class="admin-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="admin-kpi-header">
+            <h5>Monthly Revenue</h5>
+            <div class="admin-kpi-icon"><i class="fa-solid fa-chart-line"></i></div>
+          </div>
+          <div class="admin-kpi-val">$84,250.00</div>
+          <span class="trend-indicator trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +18.4% vs last month</span>
+        </div>
+
+        <div class="admin-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="admin-kpi-header">
+            <h5>Boutique Orders</h5>
+            <div class="admin-kpi-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          </div>
+          <div class="admin-kpi-val">1,428</div>
+          <span class="trend-indicator trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +12.6% order volume</span>
+        </div>
+
+        <div class="admin-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="admin-kpi-header">
+            <h5>Average Order Value</h5>
+            <div class="admin-kpi-icon"><i class="fa-solid fa-receipt"></i></div>
+          </div>
+          <div class="admin-kpi-val">$148.60</div>
+          <span class="trend-indicator trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +$22.00 per basket</span>
+        </div>
+
+        <div class="admin-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="admin-kpi-header">
+            <h5>Atelier Return Rate</h5>
+            <div class="admin-kpi-icon"><i class="fa-solid fa-rotate-left"></i></div>
+          </div>
+          <div class="admin-kpi-val">1.2%</div>
+          <span class="trend-indicator trend-up"><i class="fa-solid fa-circle-check"></i> Industry low (98.8% satisfaction)</span>
+        </div>
+      </div>
+
+      <!-- Two-Column Analytics Layout -->
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 32px; margin-bottom: 36px;">
+        
+        <!-- Inventory Stock Levels Table (Read-Only) -->
+        <div class="data-table-card" style="margin-bottom: 0;" data-aos="fade-right">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h3 style="font-size: 1.35rem; color: var(--color-primary);">Collection Inventory Levels</h3>
+            <span style="font-size: 0.8rem; background: var(--color-bg-surface); padding: 4px 12px; border-radius: var(--radius-pill); font-weight: 600;">
+              DummyJSON API Stock
+            </span>
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Apparel Item</th>
+                <th>Category</th>
+                <th>Retail Price</th>
+                <th>Stock Units</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Silk Evening Maxi Gown</strong></td>
+                <td>Women's Dresses</td>
+                <td>$89.99</td>
+                <td>42 units</td>
+                <td><span class="stock-badge stock-in"><i class="fa-solid fa-check"></i> Healthy</span></td>
+              </tr>
+              <tr>
+                <td><strong>Italian Tailored Trench Coat</strong></td>
+                <td>Outerwear</td>
+                <td>$129.99</td>
+                <td>18 units</td>
+                <td><span class="stock-badge stock-in"><i class="fa-solid fa-check"></i> Healthy</span></td>
+              </tr>
+              <tr>
+                <td><strong>Designer Leather Handbag</strong></td>
+                <td>Accessories</td>
+                <td>$199.99</td>
+                <td>5 units</td>
+                <td><span class="stock-badge stock-low"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock</span></td>
+              </tr>
+              <tr>
+                <td><strong>Men's Slim Linen Shirt</strong></td>
+                <td>Men's Tailoring</td>
+                <td>$59.99</td>
+                <td>64 units</td>
+                <td><span class="stock-badge stock-in"><i class="fa-solid fa-check"></i> Healthy</span></td>
+              </tr>
+              <tr>
+                <td><strong>Gold Polarized Sunglasses</strong></td>
+                <td>Eyewear</td>
+                <td>$45.00</td>
+                <td>8 units</td>
+                <td><span class="stock-badge stock-low"><i class="fa-solid fa-triangle-exclamation"></i> Low Stock</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Category Sales Distribution Breakdown (Read-Only Stat Bars) -->
+        <div class="admin-card" data-aos="fade-left">
+          <h3 style="font-size: 1.35rem; color: var(--color-primary); margin-bottom: 8px;">Category Share Breakdown</h3>
+          <p style="font-size: 0.88rem; color: var(--color-text-muted); margin-bottom: 24px;">Revenue contribution by haute couture department.</p>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-meta">
+              <span>Women's Dresses & Couture</span>
+              <span>45% ($37,912)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 45%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-meta">
+              <span>Men's Tailored Suits & Shirts</span>
+              <span>28% ($23,590)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill primary" style="width: 28%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-meta">
+              <span>Bespoke Leather Bags</span>
+              <span>17% ($14,322)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill gold" style="width: 17%;"></div>
+            </div>
+          </div>
+
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-meta">
+              <span>Fine Jewelry & Eyewear</span>
+              <span>10% ($8,426)</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 10%; background: #9E8F85;"></div>
+            </div>
+          </div>
+
+          <div style="background: var(--color-bg-surface); padding: 18px; border-radius: var(--radius-sm); margin-top: 28px;">
+            <div style="display: flex; gap: 12px; align-items: center;">
+              <i class="fa-solid fa-store" style="font-size: 1.4rem; color: var(--color-accent);"></i>
+              <div>
+                <strong style="font-size: 0.92rem; display: block;">Salem Atelier Dispatch Center</strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted);">MMR Complex, Chinna Thirupathi (Full Capacity: Normal)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer (Strict 4-Column Layout) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="brand-emblem"><i class="fa-solid fa-gem"></i></div>
+            <span class="brand-name" style="color: #FFFFFF;">Stackly<span>.</span></span>
+          </div>
+          <p>Stackly is Salem's premier online fashion and luxury boutique, curating contemporary couture, sustainable everyday elegance, and bespoke style statements.</p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-btn"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://pinterest.com" target="_blank" rel="noopener" class="social-icon-btn"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon-btn"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-icon-btn"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-angle-right"></i> Services</a></li>
+            <li><a href="shop.html"><i class="fa-solid fa-angle-right"></i> Shop</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Policies</h4>
+          <ul class="footer-nav-list">
+            <li><a href="services.html#privacy"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+            <li><a href="services.html#terms"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</a></li>
+            <li><a href="services.html#returns"><i class="fa-solid fa-rotate-left"></i> Return & Refund Policy</a></li>
+            <li><a href="services.html#shipping"><i class="fa-solid fa-truck"></i> Shipping Information</a></li>
+            <li><a href="404.html"><i class="fa-solid fa-triangle-exclamation"></i> 404 Error Showcase</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Boutique Contact</h4>
+          <div class="footer-contact-list">
+            <div class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</span>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:info@stackly.com">info@stackly.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:9876543210">+91 9876543210</a>
+            </div>
+          </div>
+          <div class="footer-map-embed">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.189574218843!2d78.1714049!3d11.6829566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              loading="lazy" 
+              title="Salem Boutique Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Online Fashion Boutique. All rights reserved.</p>
+        <p>Built with Pure HTML5, CSS3, ES6+ JavaScript & DummyJSON API</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof AOS !== 'undefined') AOS.init({ duration: 700, once: true });
+    });
+  </script>
+</body>
+</html>
